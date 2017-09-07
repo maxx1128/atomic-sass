@@ -1,0 +1,27 @@
+{
+  "name": "atomic-sass",
+  "version": "1.0.0",
+  "description": "Sass setup for using Atomic CSS",
+  "main": "index.js",
+  "scripts": {
+    "build-task:scss-compile": "node-sass --source-map true src/sass/ -o dist/css",
+    "build-task:autoprefixer": "postcss dist/css/*.css --use autoprefixer -d dist/css",
+    "sass:build": "npm-run-all -p build-task:*",
+    "sass:watch": "chokidar 'src/sass/**/*.scss' -c 'npm run sass:build'",
+    "start": "npm-run-all -p sass:*"
+  },
+  "keywords": [
+    "css",
+    "sass",
+    "atomic"
+  ],
+  "author": "Max Antonucci",
+  "license": "ISC",
+  "dependencies": {
+    "autoprefixer": "^7.1.4",
+    "chokidar-cli": "^1.2.0",
+    "node-sass": "^4.5.3",
+    "npm-run-all": "^4.1.1",
+    "postcss-cli": "^4.1.0"
+  }
+}
