@@ -8,7 +8,8 @@
     "build-task:autoprefixer": "postcss dist/css/*.css --use autoprefixer -d dist/css",
     "sass:build": "npm-run-all -p build-task:*",
     "sass:watch": "chokidar 'src/sass/**/*.scss' -c 'npm run sass:build'",
-    "start": "npm-run-all -p sass:*"
+    "server": "browser-sync start --server 'dist' --files 'dist'",
+    "start": "npm-run-all -p sass:* server"
   },
   "keywords": [
     "css",
@@ -19,6 +20,7 @@
   "license": "ISC",
   "dependencies": {
     "autoprefixer": "^7.1.4",
+    "browser-sync": "^2.18.13",
     "chokidar-cli": "^1.2.0",
     "node-sass": "^4.5.3",
     "npm-run-all": "^4.1.1",
