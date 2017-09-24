@@ -1,0 +1,45 @@
+$header-els: 'h1', 'h2', 'h3', 'h4', 'h5', 'h6';
+
+body { font-family: type(font-family, base); }
+
+code,
+kbd { font-family: type(font-family, mono); }
+
+@each $header in $header-els {
+  #{$header} { font-family: type(font-family, header); }
+}
+
+@each $label, $font-family in map-get($typography-map, font-family) {
+  .zz-font-family-#{$label} { font-family: $font-family; }
+}
+
+.zz-text-center { text-align: center; }
+.zz-text-right { text-align: right; }
+.zz-text-left { text-align: left; }
+
+@each $label, $bp in $breakpoint-map {
+  @include larger-than(#{$label}) {
+    .zz-#{$label}-text-center { text-align: center; }
+    .zz-#{$label}-text-right { text-align: right; }
+    .zz-#{$label}-text-left { text-align: left; }
+  }
+}
+
+@each $label, $weight in map-get($typography-map, font-weight) {
+  .zz-text-weight-#{$label} { font-weight: $weight; }
+}
+
+@each $label, $font-size in map-get($typography-map, font-size) {
+  #{$label},
+  .zz-font-size-#{$label} { font-size: $font-size; }
+}
+
+@each $label, $line-height in map-get($typography-map, line-height) {
+  #{$label},
+  .zz-line-height-#{$label} { line-height: strip-unit($line-height); }
+}
+
+@each $label, $margin in map-get($typography-map, margin) {
+  #{$label},
+  .zz-type-margin-#{$label} { margin: $margin; }
+}

@@ -1,0 +1,26 @@
+.zz-block { display: block; }
+.zz-inline-block { display: inline-block; }
+.zz-inline { display: inline; }
+
+$g-box-shadow-shade-1: rgba(color(mono, dark), 0.08);
+$g-box-shadow-shade-2: rgba(color(mono, dark), 0.12);
+$g-box-shadow-shade-3: rgba(color(mono, dark), 0.16);
+$g-box-shadow-shade-4: rgba(color(mono, dark), 0.2);
+$g-box-shadow-shade-5: rgba(color(mono, dark), 0.24);
+
+$box-shadows: (0 0 5px $g-box-shadow-shade-1, 0 0 5px $g-box-shadow-shade-4), (0 4px 8px $g-box-shadow-shade-2, 0 0 8px $g-box-shadow-shade-4), (0 8px 24px $g-box-shadow-shade-3, 0 0 24px $g-box-shadow-shade-4), (0 12px 32px $g-box-shadow-shade-4, 0 4px 32px $g-box-shadow-shade-4), (0 16px 42px $g-box-shadow-shade-5, 0 10px 42px $g-box-shadow-shade-4);
+
+@for $i from 1 through length($box-shadows) {
+  $shadow: nth($box-shadows, $i);
+
+  .zz-box-shadow-#{$i} { box-shadow: $shadow; }
+
+  .zz-box-shadow-#{$i}--hover {
+    @include hovers() { box-shadow: $shadow; }
+  }
+}
+
+
+.zz-border-radius-small { border-radius: spacing(quart); }
+.zz-border-radius-base { border-radius: spacing(half); }
+.zz-border-radius-large { border-radius: spacing(); }
