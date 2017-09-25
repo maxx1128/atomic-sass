@@ -1,0 +1,15 @@
+
+.zz-hidden { display: none; }
+
+@each $label, $bp in $breakpoint-map {
+  $bp-label-final: '';
+
+  @if ($label != 'xs') {
+    .zz-hidden-#{$label}-up {
+      @include larger-than($label) { display: none; }
+    }
+    .zz-hidden-#{$label}-down {
+      @include smaller-than($label) { display: none; }
+    }
+  }
+}

@@ -4,3 +4,5 @@
     .zz-maxWidth-#{$label} { max-width: $width; }
   }
 }
+
+.zz-clearfix { @include clearfix(); }
