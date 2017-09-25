@@ -1,0 +1,17 @@
+$abs-pos-keys: (
+  t: top,
+  r: right,
+  b: bottom,
+  l: left
+);
+
+.zz-relative { position: relative; }
+.zz-absolute { position: absolute; }
+.zz-static { position: static; }
+.zz-fixed { position: fixed; }
+
+@each $abs-key, $abs-prop in $abs-pos-keys {
+  @each $space-label, $space-val in $spacing-map {
+    .zz-abs-#{$abs-key}-#{$space-label} { #{$abs-prop}: $space-val; }
+  }
+}
