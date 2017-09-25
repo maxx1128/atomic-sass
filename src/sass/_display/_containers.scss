@@ -4,17 +4,23 @@
 
 @each $layer, $shadow in map-get($containers-map, box-shadow) {
   
-  .zz-box-shadow-#{$layer} {
+  $hover-layer: $layer - 1;
+
+  .zz-box-shadow-#{$layer},
+  .zz-box-shadow-#{$layer}-hover {
     box-shadow: $shadow;
-    transition: 0.5s;
+    transition: box-shadow 0.5s;
   }
 
-  .zz-box-shadow-#{$layer}-hover {
-    @include hovers() {
-      box-shadow: $shadow;
-      transition: 0.5s;
-    }
-  }
+  @if ($hover-layer > 0) {
+    .zz-box-shadow-#{$hover-layer}-hover {
+      @include hovers() {
+        box-shadow: $shadow;
+        transition: box-shadow 0.5s;
+        cursor: pointer;
+      }
+    } 
+  } 
 }
 
 @each $label, $radius in map-get($containers-map, border-radius) {

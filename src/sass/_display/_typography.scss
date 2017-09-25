@@ -13,18 +13,6 @@ kbd { font-family: type(font-family, mono); }
   .zz-font-family-#{$label} { font-family: $font-family; }
 }
 
-.zz-text-center { text-align: center; }
-.zz-text-right { text-align: right; }
-.zz-text-left { text-align: left; }
-
-@each $label, $bp in $breakpoint-map {
-  @include larger-than(#{$label}) {
-    .zz-#{$label}-text-center { text-align: center; }
-    .zz-#{$label}-text-right { text-align: right; }
-    .zz-#{$label}-text-left { text-align: left; }
-  }
-}
-
 @each $label, $weight in map-get($typography-map, font-weight) {
   .zz-text-weight-#{$label} { font-weight: $weight; }
 }
@@ -42,4 +30,17 @@ kbd { font-family: type(font-family, mono); }
 @each $label, $margin in map-get($typography-map, margin) {
   #{$label},
   .zz-type-margin-#{$label} { margin: $margin; }
+}
+
+
+@each $bp-label, $bp in $breakpoint-map {
+  $bp-label-final: '';
+
+  @if ($bp-label != 'xs') { $bp-label-final: '-' + $bp-label; }
+
+  @include larger-than(#{$bp-label}) {
+    .zz-text-center#{$bp-label-final} { text-align: center; }
+    .zz-text-right#{$bp-label-final} { text-align: right; }
+    .zz-text-left#{$bp-label-final} { text-align: left; }
+  } 
 }

@@ -1,40 +1,49 @@
-@each $label, $length in $spacing-map {
-  // Margin
-  .zz-m-#{$label} { margin: $length; }
-  .zz-mt-#{$label} { margin-top: $length; }
-  .zz-mr-#{$label} { margin-right: $length; }
-  .zz-mb-#{$label} { margin-bottom: $length; }
-  .zz-ml-#{$label} { margin-left: $length; }
+@each $bp-label, $bp in $breakpoint-map {
   
-  .zz-mx-#{$label} {
-    margin-right: $length;
-    margin-left: $length;
-  }
-  
-  .zz-my-#{$label} {
-    margin-top: $length;
-    margin-bottom: $length;
-  }
+  $bp-label-final: '';
 
-  // Padding
-  .zz-p-#{$label} { padding: $length; }
-  .zz-pt-#{$label} { padding-top: $length; }
-  .zz-pr-#{$label} { padding-right: $length; }
-  .zz-pb-#{$label} { padding-bottom: $length; }
-  .zz-pl-#{$label} { padding-left: $length; }
-  
-  .zz-px-#{$label} {
-    padding-right: $length;
-    padding-left: $length;
-  }
-  
-  .zz-py-#{$label} {
-    padding-top: $length;
-    padding-bottom: $length;
-  }
-}
+  @if ($bp-label != 'xs') { $bp-label-final: '-' + $bp-label; }
 
-.zz-mx-auto {
-  margin-right: auto;
-  margin-left: auto;
+  @include larger-than($bp-label) {
+    @each $label, $length in $spacing-map {
+      // Margin
+      .zz-m-#{$label}#{$bp-label-final} { margin: $length; }
+      .zz-mt-#{$label}#{$bp-label-final} { margin-top: $length; }
+      .zz-mr-#{$label}#{$bp-label-final} { margin-right: $length; }
+      .zz-mb-#{$label}#{$bp-label-final} { margin-bottom: $length; }
+      .zz-ml-#{$label}#{$bp-label-final} { margin-left: $length; }
+      
+      .zz-mx-#{$label}#{$bp-label-final} {
+        margin-right: $length;
+        margin-left: $length;
+      }
+      
+      .zz-my-#{$label}#{$bp-label-final} {
+        margin-top: $length;
+        margin-bottom: $length;
+      }
+
+      // Padding
+      .zz-p-#{$label}#{$bp-label-final} { padding: $length; }
+      .zz-pt-#{$label}#{$bp-label-final} { padding-top: $length; }
+      .zz-pr-#{$label}#{$bp-label-final} { padding-right: $length; }
+      .zz-pb-#{$label}#{$bp-label-final} { padding-bottom: $length; }
+      .zz-pl-#{$label}#{$bp-label-final} { padding-left: $length; }
+      
+      .zz-px-#{$label}#{$bp-label-final} {
+        padding-right: $length;
+        padding-left: $length;
+      }
+      
+      .zz-py-#{$label}#{$bp-label-final} {
+        padding-top: $length;
+        padding-bottom: $length;
+      }
+    }
+
+    .zz-mx-auto#{$bp-label-final} {
+      margin-right: auto;
+      margin-left: auto;
+    }
+  }
 }

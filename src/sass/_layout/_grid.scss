@@ -1,3 +1,6 @@
 @each $label, $width in $breakpoint-map {
-  .zz-maxWidth-#{$label} { max-width: $width; }
+  
+  @if ($label != 'xs') {
+    .zz-maxWidth-#{$label} { max-width: $width; }
+  }
 }

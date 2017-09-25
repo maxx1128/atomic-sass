@@ -7,11 +7,11 @@
   }
 }
 
-$g-box-shadow-shade-1: rgba(color(mono, darkest), 0.08);
-$g-box-shadow-shade-2: rgba(color(mono, darkest), 0.12);
-$g-box-shadow-shade-3: rgba(color(mono, darkest), 0.16);
-$g-box-shadow-shade-4: rgba(color(mono, darkest), 0.2);
-$g-box-shadow-shade-5: rgba(color(mono, darkest), 0.24);
+$g-box-shadow-shade-1: rgba(color(mono, darkest), 0.1);
+$g-box-shadow-shade-2: rgba(color(mono, darkest), 0.14);
+$g-box-shadow-shade-3: rgba(color(mono, darkest), 0.18);
+$g-box-shadow-shade-4: rgba(color(mono, darkest), 0.22);
+$g-box-shadow-shade-5: rgba(color(mono, darkest), 0.26);
 
 $containers-map: (
   border-radius: (
@@ -21,10 +21,10 @@ $containers-map: (
   ),
 
   box-shadow: (
-    1: (0 0 5px $g-box-shadow-shade-1, 0 0 5px $g-box-shadow-shade-4),
-    2: (0 4px 8px $g-box-shadow-shade-2, 0 0 8px $g-box-shadow-shade-4),
-    3: (0 8px 24px $g-box-shadow-shade-3, 0 0 24px $g-box-shadow-shade-4),
-    4: (0 12px 32px $g-box-shadow-shade-4, 0 4px 32px $g-box-shadow-shade-4),
-    5: (0 16px 42px $g-box-shadow-shade-5, 0 10px 42px $g-box-shadow-shade-4)
+    1: (0 0 spacing(quart) $g-box-shadow-shade-1, 0 0 spacing(quart) $g-box-shadow-shade-4),
+    2: (0 spacing(quart) spacing(half) $g-box-shadow-shade-2, 0 0 spacing(half) $g-box-shadow-shade-4),
+    3: (0 spacing(half) spacing(oneHalf) $g-box-shadow-shade-3, 0 0 spacing(oneHalf) $g-box-shadow-shade-4),
+    4: (0 spacing() spacing(double) $g-box-shadow-shade-4, 0 spacing(quart) spacing(double) $g-box-shadow-shade-4),
+    5: (0 spacing() spacing(triple) $g-box-shadow-shade-5, 0 spacing(half) spacing(triple) $g-box-shadow-shade-4)
   )
 );

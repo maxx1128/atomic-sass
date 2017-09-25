@@ -1,0 +1,31 @@
+.zz-flex { display: flex; }
+.zz-flex-wrap { flex-wrap: wrap; }
+
+.zz-flex-row-reverse { flex-direction: row-reverse; }
+.zz-flex-column { flex-direction: column; }
+.zz-flex-column-reverse { flex-direction: column-reverse; }
+
+.zz-flex-align-top { align-items: flex-start; }
+.zz-flex-align-center { align-items: center; }
+.zz-flex-align-bottom { align-items: flex-end; }
+
+.zz-flex-justify-top { justify-content: flex-start; }
+.zz-flex-justify-center { justify-content: center; }
+.zz-flex-justify-bottom { justify-content: flex-end; }
+
+.zz-flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@each $label, $bp in $breakpoint-map {
+  @if ($label != 'xs') {
+    .zz-flex-responsive-#{$label} {
+      displat: flex;
+      flex-direction: column;
+
+      @include larger-than($label) { flex-direction: row; }
+    }
+  }
+}
