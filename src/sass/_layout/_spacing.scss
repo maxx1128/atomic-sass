@@ -23,6 +23,21 @@
         margin-bottom: $length;
       }
 
+      .zz-mt-auto-#{$label}#{$bp-label-final} { margin-top: auto; }
+      .zz-mr-auto-#{$label}#{$bp-label-final} { margin-right: auto; }
+      .zz-mb-auto-#{$label}#{$bp-label-final} { margin-bottom: auto; }
+      .zz-ml-auto-#{$label}#{$bp-label-final} { margin-left: auto; }
+      
+      .zz-mx-auto-#{$label}#{$bp-label-final} {
+        margin-right: auto;
+        margin-left: auto;
+      }
+      
+      .zz-my-auto-#{$label}#{$bp-label-final} {
+        margin-top: auto;
+        margin-bottom: auto;
+      }
+
       // Padding
       .zz-p-#{$label}#{$bp-label-final} { padding: $length; }
       .zz-pt-#{$label}#{$bp-label-final} { padding-top: $length; }
