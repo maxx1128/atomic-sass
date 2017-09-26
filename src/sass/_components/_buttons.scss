@@ -1,4 +1,4 @@
-.zz-btn {
+#{$g-nmsp}-btn {
   display: inline-block;
   padding: spacing(half) spacing();
 
@@ -7,10 +7,10 @@
   border-radius: container(border-radius, small);
 }
 
-.zz-btn-small {
+#{$g-nmsp}-btn-small {
   padding: spacing(half);
 
   font-size: type(font-size, small);
 }
 
-.zz-btn-large { padding: spacing(); }
+#{$g-nmsp}-btn-large { padding: spacing(); }

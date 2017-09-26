@@ -1,19 +1,19 @@
-.zz-block { display: block; }
-.zz-inline-block { display: inline-block; }
-.zz-inline { display: inline; }
+#{$g-nmsp}-block { display: block; }
+#{$g-nmsp}-inline-block { display: inline-block; }
+#{$g-nmsp}-inline { display: inline; }
 
 @each $layer, $shadow in map-get($containers-map, box-shadow) {
   
   $hover-layer: $layer - 1;
 
-  .zz-box-shadow-#{$layer},
-  .zz-box-shadow-#{$layer}-hover {
+  #{$g-nmsp}-box-shadow-#{$layer},
+  #{$g-nmsp}-box-shadow-#{$layer}-hover {
     box-shadow: $shadow;
     transition: box-shadow 0.5s;
   }
 
   @if ($hover-layer > 0) {
-    .zz-box-shadow-#{$hover-layer}-hover {
+    #{$g-nmsp}-box-shadow-#{$hover-layer}-hover {
       @include hovers() {
         box-shadow: $shadow;
         transition: box-shadow 0.5s;
@@ -24,5 +24,5 @@
 }
 
 @each $label, $radius in map-get($containers-map, border-radius) {
-  .zz-border-radius-#{$label} { border-radius: $radius; }
+  #{$g-nmsp}-border-radius-#{$label} { border-radius: $radius; }
 }

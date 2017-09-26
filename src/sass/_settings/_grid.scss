@@ -8,11 +8,12 @@
   }
 }
 
+$g-grid-columns: 12;
+
 // Map for the breakpoints and max width
 $breakpoint-map: (
   xs: 0px,
   sm: rem(480px),
-  md: rem(787px),
-  lg: rem(900px),
+  md: rem(850px),
   max: rem(1200px)
 );

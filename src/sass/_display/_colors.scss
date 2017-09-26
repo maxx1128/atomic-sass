@@ -1,9 +1,9 @@
 
 @each $palette, $swatches in $color-map {
   @each $label, $color in $swatches {
-    .zz-bg-#{$palette}-#{$label} { background-color: $color; }
-    .zz-bg-contrast-#{$palette}-#{$label} { @include contra-color($color); }
-    .zz-border-#{$palette}-#{$label} { border-color: $color; }
-    .zz-color-#{$palette}-#{$label} { color: $color; }
+    #{$g-nmsp}-bg-#{$palette}-#{$label} { background-color: $color; }
+    #{$g-nmsp}-bg-contrast-#{$palette}-#{$label} { @include contra-color($color); }
+    #{$g-nmsp}-border-#{$palette}-#{$label} { border-color: $color; }
+    #{$g-nmsp}-color-#{$palette}-#{$label} { color: $color; }
   }
 }
