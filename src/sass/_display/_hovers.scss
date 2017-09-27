@@ -1,0 +1,19 @@
+#{$g-nmsp}-dim {
+  opacity: 1;
+  transition: opacity 0.5s;
+  
+  @include hovers() {
+    opacity: 0.6;
+    transition: opacity 0.5s;
+  }
+}
+
+#{$g-nmsp}-grow {
+  transform: scale(1);
+  transition: transform 0.5s;
+  
+  @include hovers() {
+    transform: scale(1.1);
+    transition: transform 0.5s;
+  }
+}
