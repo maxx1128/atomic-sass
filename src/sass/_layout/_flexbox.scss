@@ -1,8 +1,8 @@
 #{$g-nmsp}-flex { display: flex; }
 #{$g-nmsp}-inline-flex { display: inline-flex; }
 
-#{$g-nmsp}-flex-item { flex: 1 1 auto; }
-#{$g-nmsp}-flex-nogrow { flex-grow: 0; }
+#{$g-nmsp}-flex-item { flex: 0 1 auto; }
+#{$g-nmsp}-flex-nogrow { flex-grow: 1; }
 
 @for $i from 1 through $g-grid-columns {
   $perc-width: percentage($i/$g-grid-columns);
@@ -13,7 +13,10 @@
     @if ($bp-label != 'xs') { $bp-label-final: '-' + $bp-label; }
 
     @include larger-than($bp-label) {
-      #{$g-nmsp}-flex-basis-#{$i}#{$bp-label-final} { flex-basis: $perc-width; }
+      #{$g-nmsp}-flex-basis-#{$i}#{$bp-label-final} {
+        flex-basis: $perc-width;
+        max-width: $perc-width;
+      }
     }
   }
 }
@@ -26,6 +29,7 @@
   @include larger-than($bp-label) {
     #{$g-nmsp}-flex-wrap#{$bp-label-final} { flex-wrap: wrap; }
     #{$g-nmsp}-flex-nowrap#{$bp-label-final} { flex-wrap: nowrap; }
+    #{$g-nmsp}-flex-row#{$bp-label-final} { flex-direction: row; }
     #{$g-nmsp}-flex-row-reverse#{$bp-label-final} { flex-direction: row-reverse; }
     #{$g-nmsp}-flex-column#{$bp-label-final} { flex-direction: column; }
     #{$g-nmsp}-flex-column-reverse#{$bp-label-final} { flex-direction: column-reverse; }

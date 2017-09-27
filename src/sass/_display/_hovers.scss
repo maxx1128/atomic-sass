@@ -1,4 +1,7 @@
+#{$g-nmsp}-cursor { cursor: pointer; }
+
 #{$g-nmsp}-dim {
+  cursor: pointer;
   opacity: 1;
   transition: opacity 0.5s;
   
@@ -9,6 +12,7 @@
 }
 
 #{$g-nmsp}-grow {
+  cursor: pointer;
   transform: scale(1);
   transition: transform 0.5s;
   

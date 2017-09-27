@@ -5,6 +5,8 @@ body { font-family: type(font-family, base); }
 code,
 kbd { font-family: type(font-family, mono); }
 
+.zz-italic { font-style: italic; }
+
 @each $header in $header-els {
   #{$header} { font-family: type(font-family, header); }
 }
@@ -14,7 +16,7 @@ kbd { font-family: type(font-family, mono); }
 }
 
 @each $label, $weight in map-get($typography-map, font-weight) {
-  #{$g-nmsp}-text-weight-#{$label} { font-weight: $weight; }
+  #{$g-nmsp}-font-weight-#{$label} { font-weight: $weight; }
 }
 
 @each $label, $font-size in map-get($typography-map, font-size) {

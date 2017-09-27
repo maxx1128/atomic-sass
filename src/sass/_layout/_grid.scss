@@ -1,3 +1,5 @@
+* { box-sizing: border-box; }
+
 @each $label, $width in $breakpoint-map {
   
   @if ($label != 'xs') {
@@ -6,3 +8,5 @@
 }
 
 #{$g-nmsp}-clearfix { @include clearfix(); }
+#{$g-nmsp}-maxWidth-100 { max-width: 100%; }
+
