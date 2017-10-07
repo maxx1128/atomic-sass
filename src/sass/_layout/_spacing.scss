@@ -23,21 +23,6 @@
         margin-bottom: $length;
       }
 
-      #{$g-nmsp}-mt-auto-#{$label}#{$bp-label-final} { margin-top: auto; }
-      #{$g-nmsp}-mr-auto-#{$label}#{$bp-label-final} { margin-right: auto; }
-      #{$g-nmsp}-mb-auto-#{$label}#{$bp-label-final} { margin-bottom: auto; }
-      #{$g-nmsp}-ml-auto-#{$label}#{$bp-label-final} { margin-left: auto; }
-      
-      #{$g-nmsp}-mx-auto-#{$label}#{$bp-label-final} {
-        margin-right: auto;
-        margin-left: auto;
-      }
-      
-      #{$g-nmsp}-my-auto-#{$label}#{$bp-label-final} {
-        margin-top: auto;
-        margin-bottom: auto;
-      }
-
       // Padding
       #{$g-nmsp}-p-#{$label}#{$bp-label-final} { padding: $length; }
       #{$g-nmsp}-pt-#{$label}#{$bp-label-final} { padding-top: $length; }
@@ -55,10 +40,22 @@
         padding-bottom: $length;
       }
     }
-
-    #{$g-nmsp}-mx-auto#{$bp-label-final} {
-      margin-right: auto;
-      margin-left: auto;
-    }
   }
+
+  // Auto margin classes that only need breakpoint vars
+
+  #{$g-nmsp}-mx-auto#{$bp-label-final} {
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  #{$g-nmsp}-my-auto#{$bp-label-final} {
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+
+  #{$g-nmsp}-mt-auto#{$bp-label-final} { margin-top: auto; }
+  #{$g-nmsp}-mr-auto#{$bp-label-final} { margin-right: auto; }
+  #{$g-nmsp}-mb-auto#{$bp-label-final} { margin-bottom: auto; }
+  #{$g-nmsp}-ml-auto#{$bp-label-final} { margin-left: auto; }
 }
