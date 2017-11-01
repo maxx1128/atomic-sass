@@ -5,7 +5,11 @@ body { font-family: type(font-family, base); }
 code,
 kbd { font-family: type(font-family, mono); }
 
-.zz-italic { font-style: italic; }
+#{$g-nmsp}-italic { font-style: italic; }
+
+#{$g-nmsp}-lower { text-transform: lowercase; }
+#{$g-nmsp}-upper { text-transform: uppercase; }
+#{$g-nmsp}-capitalize { text-transform: capitalize; }
 
 @each $header in $header-els {
   #{$header} { font-family: type(font-family, header); }
