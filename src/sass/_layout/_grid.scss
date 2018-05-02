@@ -3,10 +3,10 @@
 @each $label, $width in $breakpoint-map {
   
   @if ($label != 'xs') {
-    #{$g-nmsp}-maxWidth-#{$label} { max-width: $width; }
+    #{$g-nmsp}maxWidth-#{$label} { max-width: $width; }
   }
 }
 
-#{$g-nmsp}-clearfix { @include clearfix(); }
-#{$g-nmsp}-maxWidth-100 { max-width: 100%; }
+#{$g-nmsp}clearfix { @include clearfix(); }
+#{$g-nmsp}maxWidth-100 { max-width: 100%; }
 
