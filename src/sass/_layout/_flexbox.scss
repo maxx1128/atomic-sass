@@ -1,14 +1,14 @@
 #{$g-nmsp}flex { display: flex; }
 #{$g-nmsp}inline-flex { display: inline-flex; }
 
-#{$g-nmsp}flex-item { flex: 0 1 auto; }
-#{$g-nmsp}flex-nogrow { flex-grow: 1; }
+#{$g-nmsp}flex-item { flex: 1 1 auto; }
+#{$g-nmsp}flex-nogrow { flex-grow: 0; }
 
-@for $i from 1 through $g-grid-columns {
-  $perc-width: percentage($i/$g-grid-columns);
+@each $bp-label, $bp-width in $breakpoint-map {
+  $bp-label-final: '';
 
-  @each $bp-label, $bp-width in $breakpoint-map {
-    $bp-label-final: '';
+  @for $i from 1 through $g-grid-columns {
+    $perc-width: percentage($i/$g-grid-columns);
 
     @if ($bp-label != 'xs') { $bp-label-final: '-' + $bp-label; }
 
