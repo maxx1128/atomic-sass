@@ -1,6 +1,8 @@
 @import "../_tools/calc";
 // All variables related to the grid, including breakpoints
 
+$g-grid-columns: 12;
+
 // For pulling specific breakpoint width values out.
 // Not for adding breakpoint styles.
 @function breakpoint($width) {
@@ -8,8 +10,6 @@
     @return map-get($breakpoint-map, $width);
   }
 }
-
-$g-grid-columns: 12;
 
 // Map for the breakpoints and max width
 $breakpoint-map: (
