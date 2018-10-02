@@ -20,7 +20,6 @@
 $g-base-spacing: rem(16px);
 
 $spacing-map: (
-  none   : 0,
   quad   : decimal-round(($g-base-spacing * 4), 2),
   triple : decimal-round(($g-base-spacing * 3), 2),
   double : decimal-round(($g-base-spacing * 2), 2),
@@ -29,8 +28,14 @@ $spacing-map: (
   base   : decimal-round($g-base-spacing, 2),
 
   half   : decimal-round(($g-base-spacing / 2), 2),
+  7      : 7px,
+  6      : 6px,
   third  : decimal-round(($g-base-spacing / 3), 2),
-  quart  : decimal-round(($g-base-spacing / 4), 2)
+  quart  : decimal-round(($g-base-spacing / 4), 2),
+  3      : 3px,
+  2      : 2px,
+  1      : 1px,
+  none   : 0
 );
 
 $z-layers: (
