@@ -1,7 +1,7 @@
 
 # Atomic Sass
 
-This is my Sass framework for generating Atomic CSS classes. These classes are created through Sass maps and have a `.zz-` namespace that can be quickly replaced or removed by seeting it to an empty string.
+This is my Sass framework for generating Atomic CSS classes. These classes are created through Sass maps and have a `.as-` namespace that can be quickly replaced or removed by seeting it to an empty string.
 
 ### Setup
 
