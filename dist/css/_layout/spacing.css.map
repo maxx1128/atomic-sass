@@ -1,0 +1,9 @@
+{
+	"version": 3,
+	"file": "spacing.css",
+	"sources": [
+		"../../../src/sass/_layout/spacing.scss"
+	],
+	"names": [],
+	"mappings": ""
+}
