@@ -17,11 +17,8 @@ $g-modular-scale--ratio: 1.25; // Major third
 
 // Font families
 $g-font-family-base: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-$g-font-family-header: 'Futura', -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+$g-font-family-header: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
 $g-font-family-mono: "Bitstream Vera Sans Mono", "Consolas", "Courier", monospace;
-
-
-
 
 $typography-map: (
   font-family: (
@@ -50,15 +47,15 @@ $typography-map: (
   ),
 
   line-height: (
-    h1: decimal-round(modular-scale(3), 2),
-    h2: decimal-round(modular-scale(3), 2),
-    h3: decimal-round(modular-scale(3), 2),
-    h4: decimal-round(modular-scale(2), 2),
-    h5: decimal-round(modular-scale(2), 2),
-    h6: decimal-round(modular-scale(2), 2),
+    h1: decimal-round(modular-scale(1), 2),
+    h2: decimal-round(modular-scale(1), 2),
+    h3: decimal-round(modular-scale(1), 2),
+    h4: decimal-round(modular-scale(1), 2),
+    h5: decimal-round(modular-scale(1), 2),
+    h6: decimal-round(modular-scale(1), 2),
     p: decimal-round(modular-scale(2), 2),
-    small: decimal-round(modular-scale(1), 2),
-    tiny: decimal-round(modular-scale(1), 2)
+    small: decimal-round(modular-scale(2), 2),
+    tiny: decimal-round(modular-scale(2), 2)
   ),
 
   margin: (
@@ -73,5 +70,3 @@ $typography-map: (
     tiny: 0 0 spacing(half)
   )
 );
-
-

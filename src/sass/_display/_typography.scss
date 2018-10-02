@@ -5,11 +5,20 @@ body { font-family: type(font-family, base); }
 code,
 kbd { font-family: type(font-family, mono); }
 
-#{$g-nmsp}italic { font-style: italic; }
+#{$g-nmsp}underline,
+#{$g-nmsp}underline-links a { text-decoration: underline; }
 
+#{$g-nmsp}no-underline {}
+#{$g-nmsp}underline-hover {
+  @include hovers() {}
+}
+
+#{$g-nmsp}italic { font-style: italic; }
 #{$g-nmsp}lower { text-transform: lowercase; }
 #{$g-nmsp}upper { text-transform: uppercase; }
 #{$g-nmsp}capitalize { text-transform: capitalize; }
+#{$g-nmsp}capitalize-sentence::first-letter { text-transform: capitalize; }
+#{$g-nmsp}text-transform-none { text-transform: none; }
 
 @each $header in $header-els {
   #{$header} { font-family: type(font-family, header); }
@@ -48,5 +57,22 @@ kbd { font-family: type(font-family, mono); }
     #{$g-nmsp}text-center#{$bp-label-final} { text-align: center; }
     #{$g-nmsp}text-right#{$bp-label-final} { text-align: right; }
     #{$g-nmsp}text-left#{$bp-label-final} { text-align: left; }
-  } 
+  }
 }
+
+#{$g-nmsp}list-style-disc { list-style: disc; }
+#{$g-nmsp}list-none { list-style-type: none; }
+
+#{$g-nmsp}list-inline,
+#{$g-nmsp}list-inline-flex {
+  margin: 0;
+
+  list-style-type: none;
+
+  li {
+    display: inline;
+    margin: 0;
+  }
+}
+
+#{$g-nmsp}list-inline-flex li { display: flex; }
