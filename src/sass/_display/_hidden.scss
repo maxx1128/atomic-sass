@@ -17,7 +17,7 @@
 #{$g-nmsp}overflow-x-scroll { overflow-x: scroll; }
 #{$g-nmsp}overflow-y-scroll { overflow-y: scroll; }
 
-#{$g-nmsp}-screenReader {
+#{$g-nmsp}screenReader {
   clip: rect(1px, 1px, 1px, 1px);
   height: 1px;
   width: 1px;
@@ -25,5 +25,5 @@
   position: absolute !important;
 }
 
-#{$g-nmsp}-overflow-x-scroll { overflow-x: scroll; }
-#{$g-nmsp}-overflow-y-scroll { overflow-y: scroll; }
+#{$g-nmsp}overflow-x-scroll { overflow-x: scroll; }
+#{$g-nmsp}overflow-y-scroll { overflow-y: scroll; }
