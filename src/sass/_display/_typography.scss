@@ -8,9 +8,9 @@ kbd { font-family: type(font-family, mono); }
 #{$g-nmsp}underline,
 #{$g-nmsp}underline-links a { text-decoration: underline; }
 
-#{$g-nmsp}no-underline {}
+#{$g-nmsp}no-underline { text-decoration: none; }
 #{$g-nmsp}underline-hover {
-  @include hovers() {}
+  @include hovers() { text-decoration: none; }
 }
 
 #{$g-nmsp}italic { font-style: italic; }
