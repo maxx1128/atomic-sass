@@ -1,0 +1,10 @@
+@mixin rsp-class($bp, $bp-label, $class-name) {
+  $bp-label-final: '';
+  @if ($bp-label != 'xs') { $bp-label-final: \: + $bp-label; }
+
+  @include larger-than($bp-label) {
+    #{$g-nmsp}#{$class-name}#{$bp-label-final} {
+      @content;
+    }
+  }
+}
