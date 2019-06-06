@@ -47,19 +47,6 @@ kbd { font-family: type(font-family, mono); }
   #{$g-nmsp}type-margin-#{$label} { margin: $margin; }
 }
 
-
-@each $bp-label, $bp in $breakpoint-map {
-  $bp-label-final: '';
-
-  @if ($bp-label != 'xs') { $bp-label-final: '-' + $bp-label; }
-
-  @include larger-than(#{$bp-label}) {
-    #{$g-nmsp}text-center#{$bp-label-final} { text-align: center; }
-    #{$g-nmsp}text-right#{$bp-label-final} { text-align: right; }
-    #{$g-nmsp}text-left#{$bp-label-final} { text-align: left; }
-  }
-}
-
 #{$g-nmsp}list-style-disc { list-style: disc; }
 #{$g-nmsp}list-none { list-style-type: none; }
 
@@ -76,3 +63,9 @@ kbd { font-family: type(font-family, mono); }
 }
 
 #{$g-nmsp}list-inline-flex li { display: flex; }
+
+@each $bp-label, $bp in $breakpoint-map {
+  @include rsp-class($bp, $bp-label, 'text-center') { text-align: center; }
+  @include rsp-class($bp, $bp-label, 'text-right') { text-align: right; }
+  @include rsp-class($bp, $bp-label, 'text-left') { text-align: left; }
+}

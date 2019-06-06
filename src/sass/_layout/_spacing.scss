@@ -1,61 +1,42 @@
 @each $bp-label, $bp in $breakpoint-map {
-  
-  $bp-label-final: '';
+  @each $label, $length in $spacing-map {
+    // Margin
+    @include rsp-class($bp, $bp-label, 'm-#{$label}') { margin: $length; }
+    @include rsp-class($bp, $bp-label, 'mt-#{$label}') { margin-top: $length; }
+    @include rsp-class($bp, $bp-label, 'mr-#{$label}') { margin-right: $length; }
+    @include rsp-class($bp, $bp-label, 'mb-#{$label}') { margin-bottom: $length; }
+    @include rsp-class($bp, $bp-label, 'ml-#{$label}') { margin-left: $length; }
 
-  @if ($bp-label != 'xs') { $bp-label-final: '-' + $bp-label; }
+    @include rsp-class($bp, $bp-label, 'mx-#{$label}') {
+      margin-right: $length;
+      margin-left: $length;
+    }
 
-  @include larger-than($bp-label) {
-    @each $label, $length in $spacing-map {
-      // Margin
-      #{$g-nmsp}m-#{$label}#{$bp-label-final} { margin: $length; }
-      #{$g-nmsp}mt-#{$label}#{$bp-label-final} { margin-top: $length; }
-      #{$g-nmsp}mr-#{$label}#{$bp-label-final} { margin-right: $length; }
-      #{$g-nmsp}mb-#{$label}#{$bp-label-final} { margin-bottom: $length; }
-      #{$g-nmsp}ml-#{$label}#{$bp-label-final} { margin-left: $length; }
-      
-      #{$g-nmsp}mx-#{$label}#{$bp-label-final} {
-        margin-right: $length;
-        margin-left: $length;
-      }
-      
-      #{$g-nmsp}my-#{$label}#{$bp-label-final} {
-        margin-top: $length;
-        margin-bottom: $length;
-      }
+    @include rsp-class($bp, $bp-label, 'my-#{$label}') {
+      margin-top: $length;
+      margin-bottom: $length;
+    }
 
-      // Padding
-      #{$g-nmsp}p-#{$label}#{$bp-label-final} { padding: $length; }
-      #{$g-nmsp}pt-#{$label}#{$bp-label-final} { padding-top: $length; }
-      #{$g-nmsp}pr-#{$label}#{$bp-label-final} { padding-right: $length; }
-      #{$g-nmsp}pb-#{$label}#{$bp-label-final} { padding-bottom: $length; }
-      #{$g-nmsp}pl-#{$label}#{$bp-label-final} { padding-left: $length; }
-      
-      #{$g-nmsp}px-#{$label}#{$bp-label-final} {
-        padding-right: $length;
-        padding-left: $length;
-      }
-      
-      #{$g-nmsp}py-#{$label}#{$bp-label-final} {
-        padding-top: $length;
-        padding-bottom: $length;
-      }
+    // Padding
+    @include rsp-class($bp, $bp-label, 'p-#{$label}') { padding: $length; }
+    @include rsp-class($bp, $bp-label, 'pt-#{$label}') { padding-top: $length; }
+    @include rsp-class($bp, $bp-label, 'pr-#{$label}') { padding-right: $length; }
+    @include rsp-class($bp, $bp-label, 'pb-#{$label}') { padding-bottom: $length; }
+    @include rsp-class($bp, $bp-label, 'pl-#{$label}') { padding-left: $length; }
+
+    @include rsp-class($bp, $bp-label, 'px-#{$label}') {
+      padding-right: $length;
+      padding-left: $length;
+    }
+
+    @include rsp-class($bp, $bp-label, 'py-#{$label}') {
+      padding-top: $length;
+      padding-bottom: $length;
     }
   }
 
-  // Auto margin classes that only need breakpoint vars
-
-  #{$g-nmsp}mx-auto#{$bp-label-final} {
-    margin-right: auto;
-    margin-left: auto;
-  }
-
-  #{$g-nmsp}my-auto#{$bp-label-final} {
-    margin-top: auto;
-    margin-bottom: auto;
-  }
-
-  #{$g-nmsp}mt-auto#{$bp-label-final} { margin-top: auto; }
-  #{$g-nmsp}mr-auto#{$bp-label-final} { margin-right: auto; }
-  #{$g-nmsp}mb-auto#{$bp-label-final} { margin-bottom: auto; }
-  #{$g-nmsp}ml-auto#{$bp-label-final} { margin-left: auto; }
+  @include rsp-class($bp, $bp-label, 'mt-auto') { margin-top: auto; }
+  @include rsp-class($bp, $bp-label, 'mr-auto') { margin-right: auto; }
+  @include rsp-class($bp, $bp-label, 'mb-auto') { margin-bottom: auto; }
+  @include rsp-class($bp, $bp-label, 'ml-auto') { margin-left: auto; }
 }
