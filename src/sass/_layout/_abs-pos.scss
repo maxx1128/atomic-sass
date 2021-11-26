@@ -2,31 +2,31 @@ $abs-pos-keys: (
   t: top,
   r: right,
   b: bottom,
-  l: left
+  l: left,
 );
 
-#{$g-nmsp}relative { position: relative; }
-#{$g-nmsp}absolute { position: absolute; }
-#{$g-nmsp}static { position: static; }
-#{$g-nmsp}fixed { position: fixed; }
+#{$g-nmsp}relative {
+  position: relative;
+}
+#{$g-nmsp}absolute {
+  position: absolute;
+}
+#{$g-nmsp}static {
+  position: static;
+}
+#{$g-nmsp}fixed {
+  position: fixed;
+}
 
 #{$g-nmsp}transY-base {
   transform: translateY(0%);
   transition: 0.5s;
 }
 
-#{$g-nmsp}transY-below {
-  transform: translateY(100%);
-  transition: 0.5s;
-}
-
-#{$g-nmsp}transY-above {
-  transform: translateY(-100%);
-  transition: 0.5s;
-}
-
 @each $abs-key, $abs-prop in $abs-pos-keys {
   @each $space-label, $space-val in $spacing-map {
-    #{$g-nmsp}abs-#{$abs-key}-#{$space-label} { #{$abs-prop}: $space-val; }
+    #{$g-nmsp}abs-#{$abs-key}-#{$space-label} {
+      #{$abs-prop}: $space-val;
+    }
   }
 }

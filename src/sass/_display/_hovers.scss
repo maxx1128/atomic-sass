@@ -1,9 +1,14 @@
-#{$g-nmsp}cursor { cursor: pointer; }
+#{$g-nmsp}cursor,
+#{$g-nmsp}pointer {
+  cursor: pointer;
+}
 
 #{$g-nmsp}transition {
   transition: 0.5s;
 
-  @include hovers() { transition: 0.5s; }
+  @include hovers() {
+    transition: 0.5s;
+  }
 }
 
 #{$g-nmsp}dim {

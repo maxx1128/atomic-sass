@@ -1,34 +1,87 @@
-#{$g-nmsp}flex { display: flex; }
-#{$g-nmsp}inline-flex { display: inline-flex; }
+#{$g-nmsp}inline-flex {
+  display: inline-flex;
+}
 
-#{$g-nmsp}flex-item { flex: 1 1 auto; }
-#{$g-nmsp}flex-nogrow { flex-grow: 0; }
+#{$g-nmsp}flex-item {
+  flex: 1 1 auto;
+}
+#{$g-nmsp}flex-item-full {
+  flex: 1 1 100%;
+}
+#{$g-nmsp}flex-nogrow {
+  flex-grow: 0;
+}
 
 @each $bp-label, $bp in $breakpoint-map {
-  @include rsp-class($bp, $bp-label, 'flex-wrap') { flex-wrap: wrap; }
-  @include rsp-class($bp, $bp-label, 'flex-nowrap') { flex-wrap: nowrap; }
-  @include rsp-class($bp, $bp-label, 'flex-row') { flex-direction: row; }
-  @include rsp-class($bp, $bp-label, 'flex-row-reverse') { flex-direction: row-reverse; }
-  @include rsp-class($bp, $bp-label, 'flex-column') { flex-direction: column; }
-  @include rsp-class($bp, $bp-label, 'flex-column-reverse') { flex-direction: column-reverse; }
+  @include rsp-class($bp, $bp-label, 'flex') {
+    display: flex;
+  }
+  @include rsp-class($bp, $bp-label, 'flex-wrap') {
+    flex-wrap: wrap;
+  }
+  @include rsp-class($bp, $bp-label, 'flex-nowrap') {
+    flex-wrap: nowrap;
+  }
+  @include rsp-class($bp, $bp-label, 'flex-row') {
+    flex-direction: row;
+  }
+  @include rsp-class($bp, $bp-label, 'flex-row-reverse') {
+    flex-direction: row-reverse;
+  }
+  @include rsp-class($bp, $bp-label, 'flex-column') {
+    flex-direction: column;
+  }
+  @include rsp-class($bp, $bp-label, 'flex-column-reverse') {
+    flex-direction: column-reverse;
+  }
 
-  @include rsp-class($bp, $bp-label, 'flex-align-start') { align-items: flex-start; }
-  @include rsp-class($bp, $bp-label, 'flex-align-center') { align-items: center; }
-  @include rsp-class($bp, $bp-label, 'flex-align-end') { align-items: flex-end; }
-  @include rsp-class($bp, $bp-label, 'flex-align-baseline') { align-items: baseline; }
-  @include rsp-class($bp, $bp-label, 'flex-align-stretch') { align-items: stretch; }
+  @include rsp-class($bp, $bp-label, 'flex-align-start') {
+    align-items: flex-start;
+  }
+  @include rsp-class($bp, $bp-label, 'flex-align-center') {
+    align-items: center;
+  }
+  @include rsp-class($bp, $bp-label, 'flex-align-end') {
+    align-items: flex-end;
+  }
+  @include rsp-class($bp, $bp-label, 'flex-align-baseline') {
+    align-items: baseline;
+  }
+  @include rsp-class($bp, $bp-label, 'flex-align-stretch') {
+    align-items: stretch;
+  }
 
-  @include rsp-class($bp, $bp-label, 'flex-align-self-start') { align-self: flex-start; }
-  @include rsp-class($bp, $bp-label, 'flex-align-self-center') { align-self: center; }
-  @include rsp-class($bp, $bp-label, 'flex-align-self-end') { align-self: flex-end; }
-  @include rsp-class($bp, $bp-label, 'flex-align-self-baseline') { align-self: baseline; }
-  @include rsp-class($bp, $bp-label, 'flex-align-self-stretch') { align-self: stretch; }
+  @include rsp-class($bp, $bp-label, 'flex-align-self-start') {
+    align-self: flex-start;
+  }
+  @include rsp-class($bp, $bp-label, 'flex-align-self-center') {
+    align-self: center;
+  }
+  @include rsp-class($bp, $bp-label, 'flex-align-self-end') {
+    align-self: flex-end;
+  }
+  @include rsp-class($bp, $bp-label, 'flex-align-self-baseline') {
+    align-self: baseline;
+  }
+  @include rsp-class($bp, $bp-label, 'flex-align-self-stretch') {
+    align-self: stretch;
+  }
 
-  @include rsp-class($bp, $bp-label, 'flex-justify-start') { justify-content: flex-start; }
-  @include rsp-class($bp, $bp-label, 'flex-justify-center') { justify-content: center; }
-  @include rsp-class($bp, $bp-label, 'flex-justify-end') { justify-content: flex-end; }
-  @include rsp-class($bp, $bp-label, 'flex-justify-between') { justify-content: space-between; }
-  @include rsp-class($bp, $bp-label, 'flex-justify-around') { justify-content: space-around; }
+  @include rsp-class($bp, $bp-label, 'flex-justify-start') {
+    justify-content: flex-start;
+  }
+  @include rsp-class($bp, $bp-label, 'flex-justify-center') {
+    justify-content: center;
+  }
+  @include rsp-class($bp, $bp-label, 'flex-justify-end') {
+    justify-content: flex-end;
+  }
+  @include rsp-class($bp, $bp-label, 'flex-justify-between') {
+    justify-content: space-between;
+  }
+  @include rsp-class($bp, $bp-label, 'flex-justify-around') {
+    justify-content: space-around;
+  }
 
   @include rsp-class($bp, $bp-label, 'flex-center') {
     display: flex;

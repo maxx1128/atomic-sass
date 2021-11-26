@@ -1,4 +1,4 @@
-@import "../_tools/calc";
+@import '../_tools/calc';
 // All variables related to the grid, including breakpoints
 
 $g-grid-columns: 12;
@@ -15,6 +15,7 @@ $g-grid-columns: 12;
 $breakpoint-map: (
   xs: 0px,
   sm: rem(480px),
-  md: rem(800px),
-  max: rem(1200px)
+  md: rem(700px),
+  lg: rem(900px),
+  max: rem(1200px),
 );

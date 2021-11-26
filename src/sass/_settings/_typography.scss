@@ -2,71 +2,104 @@
 
 // All typography variables
 
+// Modular Scale variables
+$g-modular-scale--base: 1.2rem;
+$g-modular-scale--ratio: 1.175;
+
+@function clampedFontSize($type) {
+  $scale: map-get(map-get($typography-map, 'font-size'), $type);
+  $max: decimal-round(modular-scale($scale + 1), 2);
+  $min: decimal-round(modular-scale($scale), 2);
+  $middle: calc((#{$max} / 3) + 2.5vw);
+
+  @return clamp($min, $middle, $max);
+}
+
 // For pulling any typography values
 // For most no base is set so it always needs two values
 @function type($type-var, $val: 'base') {
   @if map-has-key($typography-map, $type-var) {
-    @return map-get(map-get($typography-map, $type-var), $val);
+    @if ($type-var == 'font-size') {
+      @return clampedFontSize($val);
+    } @else {
+      @return map-get(map-get($typography-map, $type-var), $val);
+    }
   }
 }
 
-// Modular Scale variables
-$g-modular-scale--base: spacing();
-$g-modular-scale--ratio: 1.25; // Major third
-
-
 // Font families
-$g-font-family-base: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-$g-font-family-header: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-$g-font-family-mono: "Bitstream Vera Sans Mono", "Consolas", "Courier", monospace;
+$g-font-family-base: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
+  'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  sans-serif;
+$g-font-family-header: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
+  'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  sans-serif;
+$g-font-family-mono: 'Bitstream Vera Sans Mono', 'Consolas', 'Courier',
+  monospace;
+
+:root {
+  --font-family-base: #{$g-font-family-base};
+  --font-family-header: #{$g-font-family-header};
+  --font-family-mono: #{$g-font-family-mono};
+
+  --font-weight-header: 700;
+  --font-weight-bold: 700;
+  --font-weight-base: 300;
+  --font-weight-light: 200;
+
+  --line-height-none: 1;
+  --line-height-tight: 1.325;
+  --line-height-normal: 1.5;
+
+  --font-margin-h1: #{0 0 decimal-round(modular-scale(-3), 2)};
+  --font-margin-h2: #{0 0 decimal-round(modular-scale(-3), 2)};
+  --font-margin-h3: #{0 0 decimal-round(modular-scale(-3), 2)};
+  --font-margin-h4: #{0 0 decimal-round(modular-scale(-1), 2)};
+  --font-margin-h5: #{0 0 decimal-round(modular-scale(-1), 2)};
+  --font-margin-h6: #{0 0 decimal-round(modular-scale(-1), 2)};
+  --font-margin-p: #{0 0 decimal-round(modular-scale(0), 2) 0};
+  --font-margin-small: #{0 0 decimal-round(modular-scale(-3), 2)};
+  --font-margin-tiny: #{0 0 decimal-round(modular-scale(-3), 2)};
+}
 
 $typography-map: (
   font-family: (
-    base: $g-font-family-base,
-    header: $g-font-family-header,
-    mono: $g-font-family-mono
+    base: var(--font-family-base),
+    header: var(--font-family-header),
+    mono: var(--font-family-mono),
   ),
-
   font-size: (
-    h1: decimal-round(modular-scale(5), 2),
-    h2: decimal-round(modular-scale(4), 2),
-    h3: decimal-round(modular-scale(3), 2),
-    h4: decimal-round(modular-scale(2), 2),
-    h5: decimal-round(modular-scale(1), 2),
-    h6: decimal-round(modular-scale(0), 2),
-    large: decimal-round(modular-scale(0), 2),
-    p: decimal-round(modular-scale(0), 2),
-    small: decimal-round(modular-scale(-1), 2),
-    tiny: decimal-round(modular-scale(-2), 2)
+    h1: 5,
+    h2: 4,
+    h3: 3,
+    h4: 2,
+    h5: 1,
+    h6: 1,
+    large: 1,
+    p: 0,
+    small: -2,
+    tiny: -3,
   ),
-
   font-weight: (
-    bold: 700,
-    base: 400,
-    light: 100
+    header: var(--font-weight-header),
+    bold: var(--font-weight-bold),
+    base: var(--font-weight-base),
+    light: var(--font-weight-light),
   ),
-
   line-height: (
-    h1: decimal-round(modular-scale(1), 2),
-    h2: decimal-round(modular-scale(1), 2),
-    h3: decimal-round(modular-scale(1), 2),
-    h4: decimal-round(modular-scale(1), 2),
-    h5: decimal-round(modular-scale(1), 2),
-    h6: decimal-round(modular-scale(1), 2),
-    p: decimal-round(modular-scale(2), 2),
-    small: decimal-round(modular-scale(2), 2),
-    tiny: decimal-round(modular-scale(2), 2)
+    none: var(--line-height-none),
+    tight: var(--line-height-tight),
+    normal: var(--line-height-normal),
   ),
-
   margin: (
-    h1: 0 0 spacing(half),
-    h2: 0 0 spacing(half),
-    h3: 0 0 spacing(half),
-    h4: 0 0 spacing(third),
-    h5: 0 0 spacing(third),
-    h6: 0 0 spacing(third),
-    p: 0 0 spacing() 0,
-    small: 0 0 spacing(half),
-    tiny: 0 0 spacing(half)
-  )
+    h1: var(--font-margin-h1),
+    h2: var(--font-margin-h2),
+    h3: var(--font-margin-h3),
+    h4: var(--font-margin-h4),
+    h5: var(--font-margin-h5),
+    h6: var(--font-margin-h6),
+    p: var(--font-margin-p),
+    small: var(--font-margin-small),
+    tiny: var(--font-margin-tiny),
+  ),
 );

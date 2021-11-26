@@ -1,0 +1,62 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: strip-unit(type(line-height, tight));
+  margin: spacing(10) 0 spacing();
+  font-family: type(font-family, header);
+  font-weight: type(font-weight, header);
+}
+
+p,
+ol,
+ul,
+small,
+tiny {
+  margin-bottom: spacing(6);
+
+  line-height: strip-unit(type(line-height, normal));
+}
+
+ol,
+ul {
+  margin-top: 0;
+  padding-left: spacing(6);
+
+  ul,
+  ol {
+    margin-top: spacing();
+  }
+}
+
+strong {
+  font-weight: type(font-weight, bold);
+}
+
+li {
+  margin-bottom: spacing(2);
+
+  font-size: type(font-size, p);
+}
+
+p {
+  margin-top: 0;
+}
+
+a {
+  color: color(action);
+
+  &:focus {
+    outline: 2px solid color(action, base);
+    outline-offset: 2px;
+  }
+}
+
+hr {
+  height: 3px;
+  margin: spacing(6) 0;
+
+  background-color: color(primary, dark);
+}

@@ -1,5 +1,85 @@
+@mixin darkMode() {
+  .theme-dark {
+    @content;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      @content;
+    }
+  }
+}
+
+:root {
+  --color-primary-darkest: #0d3331;
+  --color-primary-darker: #20504f;
+  --color-primary-dark: #38a89d;
+  --color-primary-base: #4dc0b5;
+  --color-primary-light: #64d5ca;
+  --color-primary-lighter: #a0f0ed;
+  --color-primary-lightest: #e8fffe;
+
+  --color-secondary-darkest: #3b0d0c;
+  --color-secondary-darker: #621b18;
+  --color-secondary-dark: #cc1f1a;
+  --color-secondary-base: #e3342f;
+  --color-secondary-light: #ef5753;
+  --color-secondary-lighter: #f9acaa;
+  --color-secondary-lightest: #fcebea;
+
+  --color-action-darkest: #3f362a;
+  --color-action-darker: #7e6c54;
+  --color-action-dark: #bda27e;
+  --color-action-base: #d2b48c;
+  --color-action-light: #d6bb97;
+  --color-action-lighter: #e4d2ba;
+  --color-action-lightest: #f1e8dc;
+
+  --color-mono-black: #111;
+  --color-mono-darkest: #3d4852;
+  --color-mono-darker: #606f7b;
+  --color-mono-dark: #8795a1;
+  --color-mono-base: #b8c2cc;
+  --color-mono-light: #dae1e7;
+  --color-mono-lighter: #f1f5f8;
+  --color-mono-lightest: #f8fafc;
+  --color-mono-white: #ffffff;
+}
+
+@include darkMode() {
+  --color-primary-lightest: #0d3331;
+  --color-primary-lighter: #20504f;
+  --color-primary-light: #38a89d;
+  --color-primary-dark: #64d5ca;
+  --color-primary-darker: #a0f0ed;
+  --color-primary-darkest: #e8fffe;
+
+  --color-secondary-lightest: #3b0d0c;
+  --color-secondary-lighter: #621b18;
+  --color-secondary-light: #cc1f1a;
+  --color-secondary-dark: #ef5753;
+  --color-secondary-darker: #f9acaa;
+  --color-secondary-darkest: #fcebea;
+
+  --color-action-lightest: #3f362a;
+  --color-action-lighter: #7e6c54;
+  --color-action-light: #bda27e;
+  --color-action-dark: #d6bb97;
+  --color-action-darker: #e4d2ba;
+  --color-action-darkest: #f1e8dc;
+
+  --color-mono-white: #111;
+  --color-mono-lightest: #3d4852;
+  --color-mono-lighter: #606f7b;
+  --color-mono-light: #8795a1;
+  --color-mono-dark: #dae1e7;
+  --color-mono-darker: #f1f5f8;
+  --color-mono-darkest: #f8fafc;
+  --color-mono-black: #ffffff;
+}
+
 // This function pulls specific color values from the below map
-@function color($color, $tone: 'base') {
+@function color($color, $tone: base) {
   @if map-has-key($color-map, $color) {
     @return map-get(map-get($color-map, $color), $tone);
   }
@@ -8,44 +88,41 @@
 // Map for storing all color variables
 $color-map: (
   primary: (
-    darkest: #0D3331,
-    darker: #20504F,
-    dark: #38A89D,
-    base: #4DC0B5,
-    light: #64D5CA,
-    lighter: #A0F0ED,
-    lightest: #E8FFFE
+    darkest: var(--color-primary-darkest),
+    darker: var(--color-primary-darker),
+    dark: var(--color-primary-dark),
+    base: var(--color-primary-base),
+    light: var(--color-primary-light),
+    lighter: var(--color-primary-lighter),
+    lightest: var(--color-primary-lightest),
   ),
-
   secondary: (
-    darkest: #3f362a,
-    darker: #7e6c54,
-    dark: #bda27e,
-    base: #D2B48C,
-    light: #d6bb97,
-    lighter: #e4d2ba,
-    lightest: #f1e8dc
+    darkest: var(--color-secondary-darkest),
+    darker: var(--color-secondary-darker),
+    dark: var(--color-secondary-dark),
+    base: var(--color-secondary-base),
+    light: var(--color-secondary-light),
+    lighter: var(--color-secondary-lighter),
+    lightest: var(--color-secondary-lightest),
   ),
-
   action: (
-    darkest: #3B0D0C,
-    darker: #621B18,
-    dark: #CC1F1A,
-    base: #E3342F,
-    light: #EF5753,
-    lighter: #F9ACAA,
-    lightest: #FCEBEA
+    darkest: var(--color-action-darkest),
+    darker: var(--color-action-darker),
+    dark: var(--color-action-dark),
+    base: var(--color-action-base),
+    light: var(--color-action-light),
+    lighter: var(--color-action-lighter),
+    lightest: var(--color-action-lightest),
   ),
-
   mono: (
-    black: #111,
-    darkest: #3D4852,
-    darker: #606F7B,
-    dark: #8795A1,
-    base: #B8C2CC,
-    light: #DAE1E7,
-    lighter: #F1F5F8,
-    lightest: #F8FAFC,
-    white: #FFFFFF
-  )
+    black: var(--color-mono-black),
+    darkest: var(--color-mono-darkest),
+    darker: var(--color-mono-darker),
+    dark: var(--color-mono-dark),
+    base: var(--color-mono-base),
+    light: var(--color-mono-light),
+    lighter: var(--color-mono-lighter),
+    lightest: var(--color-mono-lightest),
+    white: var(--color-mono-white),
+  ),
 );

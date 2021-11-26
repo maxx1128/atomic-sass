@@ -1,0 +1,22 @@
+$img-styles: cover, contain;
+$img-aspect-ratios: (
+  portrait: 9/16,
+  square: 1/1,
+  landscape: 16/9,
+);
+
+@each $img-style in $img-styles {
+  #{$g-nmsp}object-fit-#{$img-style} {
+    object-fit: $img-style;
+  }
+
+  #{$g-nmsp}bg-size-#{$img-style} {
+    background-size: $img-style;
+  }
+}
+
+@each $ar-label, $ar-value in $img-aspect-ratios {
+  #{$g-nmsp}aspect-ratio-#{$ar-label} {
+    aspect-ratio: $ar-value;
+  }
+}

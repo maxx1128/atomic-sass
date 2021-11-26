@@ -1,11 +1,21 @@
 @each $bp-label, $bp in $breakpoint-map {
   @each $label, $length in $spacing-map {
     // Margin
-    @include rsp-class($bp, $bp-label, 'm-#{$label}') { margin: $length; }
-    @include rsp-class($bp, $bp-label, 'mt-#{$label}') { margin-top: $length; }
-    @include rsp-class($bp, $bp-label, 'mr-#{$label}') { margin-right: $length; }
-    @include rsp-class($bp, $bp-label, 'mb-#{$label}') { margin-bottom: $length; }
-    @include rsp-class($bp, $bp-label, 'ml-#{$label}') { margin-left: $length; }
+    @include rsp-class($bp, $bp-label, 'm-#{$label}') {
+      margin: $length;
+    }
+    @include rsp-class($bp, $bp-label, 'mt-#{$label}') {
+      margin-top: $length;
+    }
+    @include rsp-class($bp, $bp-label, 'mr-#{$label}') {
+      margin-right: $length;
+    }
+    @include rsp-class($bp, $bp-label, 'mb-#{$label}') {
+      margin-bottom: $length;
+    }
+    @include rsp-class($bp, $bp-label, 'ml-#{$label}') {
+      margin-left: $length;
+    }
 
     @include rsp-class($bp, $bp-label, 'mx-#{$label}') {
       margin-right: $length;
@@ -18,11 +28,21 @@
     }
 
     // Padding
-    @include rsp-class($bp, $bp-label, 'p-#{$label}') { padding: $length; }
-    @include rsp-class($bp, $bp-label, 'pt-#{$label}') { padding-top: $length; }
-    @include rsp-class($bp, $bp-label, 'pr-#{$label}') { padding-right: $length; }
-    @include rsp-class($bp, $bp-label, 'pb-#{$label}') { padding-bottom: $length; }
-    @include rsp-class($bp, $bp-label, 'pl-#{$label}') { padding-left: $length; }
+    @include rsp-class($bp, $bp-label, 'p-#{$label}') {
+      padding: $length;
+    }
+    @include rsp-class($bp, $bp-label, 'pt-#{$label}') {
+      padding-top: $length;
+    }
+    @include rsp-class($bp, $bp-label, 'pr-#{$label}') {
+      padding-right: $length;
+    }
+    @include rsp-class($bp, $bp-label, 'pb-#{$label}') {
+      padding-bottom: $length;
+    }
+    @include rsp-class($bp, $bp-label, 'pl-#{$label}') {
+      padding-left: $length;
+    }
 
     @include rsp-class($bp, $bp-label, 'px-#{$label}') {
       padding-right: $length;
@@ -33,10 +53,32 @@
       padding-top: $length;
       padding-bottom: $length;
     }
+
+    @include rsp-class($bp, $bp-label, 'flex-gap-#{$label}') {
+      gap: $length;
+    }
   }
 
-  @include rsp-class($bp, $bp-label, 'mt-auto') { margin-top: auto; }
-  @include rsp-class($bp, $bp-label, 'mr-auto') { margin-right: auto; }
-  @include rsp-class($bp, $bp-label, 'mb-auto') { margin-bottom: auto; }
-  @include rsp-class($bp, $bp-label, 'ml-auto') { margin-left: auto; }
+  @include rsp-class($bp, $bp-label, 'mt-auto') {
+    margin-top: auto;
+  }
+  @include rsp-class($bp, $bp-label, 'mr-auto') {
+    margin-right: auto;
+  }
+  @include rsp-class($bp, $bp-label, 'mb-auto') {
+    margin-bottom: auto;
+  }
+  @include rsp-class($bp, $bp-label, 'ml-auto') {
+    margin-left: auto;
+  }
+
+  @include rsp-class($bp, $bp-label, 'mx-auto') {
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  @include rsp-class($bp, $bp-label, 'my-auto') {
+    margin-top: auto;
+    margin-bottom: auto;
+  }
 }
